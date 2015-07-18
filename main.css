@@ -1,10 +1,66 @@
-html{
-  height:100%;
-}
 
 body {
+	background-color: rgb(4, 70, 108);
+	font-family: 'Segoe UI';
+	font-weight: normal;
+	font-size: 24px;
+	color: white;
+}
+table#top{
+	-webkit-border-horizontal-spacing: 20px;
+	-webkit-border-vertical-spacing: 2px;
+	width: 100%;
+}
+#title {
+	font-size: 36px;
+}
+.circle {
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px; 
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    line-height: 60px;
+    -webkit-transition: .3s ease-in-out;
+}
+.circle:hover {
+	cursor: pointer;
+	background-color: rgb(151, 172, 7); !important
+	font-weight: bold;
+	-webkit-transform: scale(1.1);
+}
+#active {
+	background-color: #292929;
+	color: white;
+	font-weight: bold;
+	-webkit-transform: scale(1.1);
+}
+.content tr{
+	background-color: white;
+	margin: 20px;
+	color: black;
+}
+#people {
+	display: none;
+}
+#posts {
+	display: none;
+}
+#events {
+	display: none;
+}
+#photos {
+	display: none;
+}
+#files {
+	display: none;
+}
+html{
   height:100%;
-  background-color:rgb(4,70,108);
 }
 
 form {
@@ -101,4 +157,3 @@ form {
   color: #4e5800;
   text-shadow: 0 1px 1px #709400;
 }
-
