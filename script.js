@@ -130,10 +130,10 @@ function grabPosts() {
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
 		    postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
-		    if (data.link != null)
+		    /*if (data.link != null)
 		    {
 		    	postsHTML += "<embed src='" + data.link + "'>"
-		    }
+		    }*/
 		    postsHTML += data.message + "</td></tr>"
 		    //console.log(data.message);
 		}
