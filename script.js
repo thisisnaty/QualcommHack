@@ -311,7 +311,8 @@ function grabInternshipPosts(){
 
 function searchBar(){
 		var postsHTML ="";
-  console.log('you searched .... '); 
+  console.log('you searched .... ');
+  console.log((document.getElementById("searchBar").value)); 
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
