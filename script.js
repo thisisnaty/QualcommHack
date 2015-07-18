@@ -154,10 +154,9 @@ function grabPosts() {
     "/AspirationsAward/feed?limit=50",
     function (response) {
       if (response && !response.error) {
-	console.log(response);
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
-		    console.log(data.actions[0].link);
+		    alert(data.actions[0].link);
 		    postsHTML += "<tr><div class='fb-post' data-href='" + data.actions[0].link + "'></div></tr>"
 		    //postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
 		    //postsHTML += data.message + "</td></tr>"
