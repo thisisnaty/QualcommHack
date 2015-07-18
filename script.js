@@ -417,7 +417,7 @@ function grabEventPosts(){
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
 			    if (((data.message).indexOf("opportunity") != -1 || (data.message).indexOf("scholarship") != -1
-			    || (data.message).indexOf("award") != -1 || (data.message).indexOf("honor") != -1) && (data.message.track_name)) {
+			    || (data.message).indexOf("award") != -1 || (data.message).indexOf("honor") != -1) && !(data.message.track_name)) {
 			    		var rowToShow = "#allPosts" + i;
 			    		$(rowToShow).show();
 				}
