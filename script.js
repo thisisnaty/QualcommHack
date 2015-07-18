@@ -316,7 +316,7 @@ function loadContent(table) {
 	  $('#' + actualContent).css({"display": "none"});
 	  actualContent = table;
 	  $('#' + table).css("display", "table");
-	  if (actualContents == 'people') {
+	  if (actualContent == 'people') {
 	  	loadUsers();
 	  }
 }
