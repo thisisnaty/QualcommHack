@@ -28,7 +28,7 @@ $('#cssmenu > ul > li > a').click(function() {
 } )( jQuery );
 
 Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe21T7LLLHly1nm9plKyKydMr");
-onLoginButtonClicked(); 
+ onLoginButtonClicked();
 
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -186,6 +186,7 @@ FB.api(
 }
 
 function loadFirst(){
+	
   actualContent = "posts";
   
   var postsHTML ="";
