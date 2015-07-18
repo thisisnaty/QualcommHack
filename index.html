@@ -103,6 +103,17 @@
   user_education_history,user_work_history,
 -->
 
+/* make the API call */
+FB.api(
+    "/{group-id}",
+    function (response) {
+      if (response && !response.error) {
+        /* handle the result */
+        console.log(response); 
+      }
+    }
+);
+
 <fb:login-button scope="public_profile,email,user_groups" onlogin="checkLoginState();">
 </fb:login-button>
 
