@@ -126,7 +126,7 @@ function grabPosts() {
 	console.log(response);
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
-		    postsHTML += "<tr><td> <img src='" + data.image + "'/></td><td>";
+		    postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
 		   /* if (data.link != null)
 		    {
 		    	postsHTML += "<embed src='" + data.link + "'>"
