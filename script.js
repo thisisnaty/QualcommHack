@@ -355,7 +355,7 @@ function grabMeetupPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("meet up") != -1 || (data.message).indexOf("meet") != -1) {
+			    if (((data.message).indexOf("meet up") != -1 || (data.message).indexOf("meet") != -1)) && (data.message).indexOf("undefined") == -1) {
 			    	var rowToShow = "#allPosts" + i;
 			    	$(rowToShow).show();
 				}
@@ -396,7 +396,7 @@ function grabEventPosts(){
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
 			    if (((data.message).indexOf("opportunity") != -1 || (data.message).indexOf("scholarship") != -1
-			    || (data.message).indexOf("award") != -1 || (data.message).indexOf("honor") != -1) && (data.message) != "undefined") {
+			    || (data.message).indexOf("award") != -1 || (data.message).indexOf("honor") != -1)) && (data.message) != "undefined") {
 			    		var rowToShow = "#allPosts" + i;
 			    		$(rowToShow).show();
 				}
