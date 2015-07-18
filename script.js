@@ -142,7 +142,7 @@ function callGroups() {
         }
       }
   );
-  loadFirst("posts");
+  loadFirst();
 }
 
 /*function grabPosts() {
@@ -185,8 +185,8 @@ FB.api(
 );
 }
 
-function loadFirst(table){
-  actualContent = table;
+function loadFirst(){
+  actualContent = "posts";
   
   var postsHTML ="";
   console.log('you asked for the feed .... '); 
@@ -210,8 +210,30 @@ function loadFirst(table){
 		    
 		    //console.log(data.message);
 		}
-		$('#' + table).append(postsHTML);
-		$('#' + table).css("display", "table");
+		$('#posts').append(postsHTML);
+		$('#posts').css("display", "table");
+	}
+      else {
+        console.log(response); 
+      }
+    }
+);
+var eventsHTML ="";
+FB.api(
+    "/AspirationsAward/events",
+    function (response) {
+      if (response && !response.error) {
+        	 $('#loading').hide();
+      		console.log(response.data.length); 
+		for (var i = 0; i < response.data.length; i++) {
+		    var data = response.data[i];
+		    
+		    eventsHTML += "<tr id='allEvents"+ i + "'><th id='backgroundIMG' colspan='4'> <img id='eventIMG' src='" + data.picture + "'/></th></tr>";
+		    eventsHTML += "<tr><td>" + data.name + "</td><td>" + data.owner + "</td><td>" + data.place + "</td><td>" + data.start_time + "</td></tr>";
+		    
+		    //console.log(data.message);
+		}
+		$('#events').append(eventsHTML);
 	}
       else {
         console.log(response); 
@@ -225,19 +247,6 @@ function loadContent(table) {
 	  $('.circle.' + table + 'Icon').attr('id', 'active');
 	  $('#' + actualContent).css({"display": "none"});
 	  actualContent = table;
-	  switch(table) {
-	  	case "posts":
-	  		grabPosts();
-	  		break;
-	  	case "people":
-	  		break;
-	  	case "events":
-	  		break;
-	  	case "files":
-	  		break;
-	  	case "photos":
-	  		break;
-	  }
 	  $('#' + table).css("display", "table");
 }
 
@@ -253,7 +262,7 @@ function loadContent(table) {
  		    
  		    //postsHTML += "<tr><div class='fb-post' data-href='" + data.actions[0].link + "' data-width='500px'></div></tr>";
  		    postsHTML += "<tr id='addPosts" + i + "'><td id='postIMG'> <img src='" + data.picture + "'/></td><td id='postMessage'>";
- 		    postsHTML += "<a target='_blank' class='profileLink' style='text-decoration:none' href='" + data.actions[0].link + "'>" + data.message + " </a></td></tr>"
+ 		    postsHTML += "<a class='profileLink' style='text-decoration:none' href='" + data.actions[0].link + "'>" + data.message + " </a></td></tr>"
  		    //console.log(data.message);
  		}
  		$('#posts').append(postsHTML);
@@ -275,8 +284,7 @@ function grabInternshipPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("internship") == -1 || (data.message).indexOf("company") == -1 
-			    || (data.message).indexOf("intern") == -1 || (data.message).indexOf("companies") == -1) {
+			    if ((data.message).indexOf("internships") == -1) {
 			    	var rowToHide = "#allPosts" + i;
 			    	$(rowToHide).hide();
 			    	//console.log(data.message); 
@@ -301,7 +309,7 @@ function grabMeetupPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("meet up") != -1 || (data.message).indexOf("meet") != -1) {
+			    if ((data.message).indexOf("meet up") == -1 || (data.message).indexOf("meet") == -1) {
 			    	var rowToShow = "#allPosts" + i;
 			    	$(rowToShow).show();
 				}
@@ -321,8 +329,8 @@ function grabEventPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			   if (((data.message).indexOf("event") != -1 || (data.message).indexOf("next week") != -1
-			    || (data.message).indexOf("tomorrow") != -1 || (data.message).indexOf("tonight") != -1) && (data.message).indexOf("undefined") == -1) {
+			    if ((data.message).indexOf("event") == -1 || (data.message).indexOf("next week") == -1
+			    || (data.message).indexOf("tomorrow") == -1 || (data.message).indexOf("tonight") == -1) {
 			    		var rowToShow = "#allPosts" + i;
 			    		$(rowToShow).show();
 				}
@@ -341,8 +349,8 @@ function grabEventPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("opportunity") != -1 || (data.message).indexOf("scholarship") != -1
-			    || (data.message).indexOf("award") != -1 || (data.message).indexOf("honor") != -1) {
+			    if ((data.message).indexOf("opportunity") == -1 || (data.message).indexOf("scholarship") == -1
+			    || (data.message).indexOf("award") == -1 || (data.message).indexOf("honor") == -1) {
 			    		var rowToShow = "#allPosts" + i;
 			    		$(rowToShow).show();
 				}
@@ -361,8 +369,8 @@ function grabEventPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("free") != -1 || (data.message).indexOf("sale") != -1
-			    || (data.message).indexOf("promo") != -1 || (data.message).indexOf(" win ") != -1 ){
+			    if ((data.message).indexOf("free") == -1 || (data.message).indexOf("sale") == -1
+			    || (data.message).indexOf("promo") == -1 || (data.message).indexOf("win") == -1 ){
 			    		var rowToShow = "#allPosts" + i;
 			    		$(rowToShow).show();
 				}
