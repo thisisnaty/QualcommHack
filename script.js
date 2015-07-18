@@ -294,8 +294,8 @@ function grabMyInfo(){
              //});
            } else {
              console.log("Oops something went wrong with facebook.");
-           });
-	}
+           }
+	});
 }
 
 function grabPeople(){
