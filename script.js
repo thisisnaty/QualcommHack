@@ -277,6 +277,8 @@ function loadContent(table) {
  );
  }
 
+
+
 function grabPeople(){
 	
 }
@@ -288,6 +290,32 @@ function grabInternshipPosts(){
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
 			    if ((data.message).indexOf("internships") == -1) {
+			    	var rowToHide = "#allPosts" + i;
+			    	$(rowToHide).hide();
+			    	//console.log(data.message); 
+				    //postsHTML += "<tr><div class='fb-post' data-href='" + data.actions[0].link + "' data-width='500px'></div></tr>";
+				    //postsHTML += "<tr><td id='postIMG'> <img src='" + data.picture + "'/></td><td id='postMessage'>";
+				    //postsHTML += "<a class='profileLink' style='text-decoration:none' href='" + data.actions[0].link + "'>" + data.message + " </a></td></tr>"
+				    //console.log(data.message);
+				}
+				else
+				{
+					var rowToShow = "#allPosts" + i;
+			    		$(rowToShow).show();	
+				}
+			}
+		}
+		//$('#posts').append(postsHTML);
+	}
+
+
+function searchBar(){
+		var postsHTML ="";
+  console.log('you searched .... '); 
+		for (var i = 0; i < postArray.length; i++) {
+		    var data = postArray[i];
+		    if ((typeof data.message) == "string") {
+			    if ((data.message).indexOf((document.getElementById("searchBar").value)) == -1) {
 			    	var rowToHide = "#allPosts" + i;
 			    	$(rowToHide).hide();
 			    	//console.log(data.message); 
