@@ -22,6 +22,8 @@
 	   <li><a href='#'><span>Freebies</span></a></li>
 	</ul>
   </div>
+  <table id='posts'>
+  </table>
 <script>
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -127,6 +129,8 @@ function grabPosts() {
 
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
+		    var postsHTML = "<tr><td> <img src='" + data.image + "'/></td><td>" + data.message +" </td></tr>"
+		    $('#posts').append(postsHTML);
 		    console.log(data.message);
 		}
 	}
