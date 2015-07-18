@@ -130,7 +130,7 @@ function grabPosts() {
 		    var data = response.data[i];
 		    var postsHTML = "<tr><td> <img src='" + data.image + "'/></td><td>" + data.message +" </td></tr>"
 		    $('#posts').append(postsHTML);
-		    console.log(data.message);
+		    console.log(data);
 		}
 	}
       else {
