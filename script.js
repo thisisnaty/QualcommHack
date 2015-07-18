@@ -223,7 +223,7 @@ FB.api(
     "/AspirationsAward/events",
     function (response) {
       if (response && !response.error) {
-        	 $('#loading').hide();
+  
         	 eventsArray = response.data;
       		console.log(eventsArray.length); 
 		for (var i = 0; i < eventsArray.length; i++) {
