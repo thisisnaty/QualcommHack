@@ -74,7 +74,7 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
 	    } else {
 	      alert("User logged in through Facebook!");
 	    }
-	    
+	    getCurrentUserInfo();
 	  },
 	  error: function(user, error) {
 	    alert("User cancelled the Facebook login or did not fully authorize.");
