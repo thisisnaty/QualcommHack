@@ -281,7 +281,7 @@ function grabInternshipPosts(){
 		}
 		$('#posts').append(postsHTML);
 	}
-}
+
 
 /*function loadContent(table) {
   $('#active').removeAttr('id');
