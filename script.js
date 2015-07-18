@@ -283,6 +283,20 @@ function grabPeople(){
 	
 }
 
+function grabAllPosts(){
+		var postsHTML ="";
+  console.log('you asked for the internship .... '); 
+		for (var i = 0; i < postArray.length; i++) {
+		    var data = postArray[i];
+		    if ((typeof data.message) == "string") {
+				var rowToShow = "#allPosts" + i;
+			    	$(rowToShow).show();	
+				
+			}
+		}
+	
+}
+
 function grabInternshipPosts(){
 		var postsHTML ="";
   console.log('you asked for the internship .... '); 
