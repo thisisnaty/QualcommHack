@@ -277,6 +277,11 @@ function loadContent(table) {
  );
  }
  
+function grabMembers() {
+	actualContent = "people";
+	var users = getUsers();
+}
+ 
 function getUsers() {
 	actualContent = "people";
 	listOfUsers = [];
