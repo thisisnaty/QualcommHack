@@ -17,6 +17,10 @@ table#top{
 	  background-color: rgb(4, 70, 108);
 }
 
+#postIMG {
+	width:70px;
+	height:70px;
+}
 #postMessage {
 	margin:0px;
 }
