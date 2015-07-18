@@ -107,7 +107,7 @@ a.profileLink
 	font-size: 36px;
 }
 .circle {
-	position: absolute;
+	position: fixed;
     width: 60px;
     height: 60px !important;
     margin: 7px;
