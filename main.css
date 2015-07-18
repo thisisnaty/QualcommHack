@@ -27,6 +27,7 @@ table#top{
 a.profileLink
 {
    color:black;
+   font-family:'Segoe UI';
    margin-left:40px;
    text-decoration: none;
 }
