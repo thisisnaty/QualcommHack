@@ -200,6 +200,7 @@ function getUsers() {
 	  	console.log("error getting list of users");
 	  }
 	});
+	console.log("printing list of users...");
 	console.log(listOfUsers);
 	return listOfUsers;
 }
