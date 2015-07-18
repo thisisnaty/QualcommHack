@@ -199,6 +199,7 @@ function loadFirst(table){
     "/AspirationsAward/feed?limit=250",
     function (response) {
       if (response && !response.error) {
+        	 $('#loading').hide();
       		postArray = response.data; 
       		console.log(postArray.length); 
 		for (var i = 0; i < response.data.length; i++) {
