@@ -23,7 +23,7 @@ $('#cssmenu > ul > li > a').click(function() {
 });
 } )( jQuery );
 
-Parse.initialize("Tr0epOMYD8xXYa22R3Uc8MhEGMYGLuoA0J05aYv3", "o3ki0HSrtxHj0Dcq4LmJAKrwTLo3BBgpX9awr1p8");
+Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe21T7LLLHly1nm9plKyKydMr");
 
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
