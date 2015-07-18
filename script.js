@@ -1,3 +1,4 @@
+var loggedIn;
 ( function( $ ) {
 $( document ).ready(function() {
 $('#cssmenu ul ul li:odd').addClass('odd');
