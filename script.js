@@ -36,17 +36,6 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
-      var user = Parse.User.current();
-	if (!Parse.FacebookUtils.isLinked(user)) {
-	  Parse.FacebookUtils.link(user, null, {
-	    success: function(user) {
-	      alert("Woohoo, user logged in with Facebook!");
-	    },
-	    error: function(user, error) {
-	      alert("User cancelled the Facebook login or did not fully authorize.");
-	    }
-	  });
-	}
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -78,6 +67,30 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
   });
 
 
+Parse.FacebookUtils.logIn(null, {
+  success: function(user) {
+    if (!user.existed()) {
+      alert("User signed up and logged in through Facebook!");
+    } else {
+      alert("User logged in through Facebook!");
+    }
+  },
+  error: function(user, error) {
+    alert("User cancelled the Facebook login or did not fully authorize.");
+  }
+});
+
+var user = Parse.User.current();
+if (!Parse.FacebookUtils.isLinked(user)) {
+  Parse.FacebookUtils.link(user, null, {
+    success: function(user) {
+      alert("Woohoo, user logged in with Facebook!");
+    },
+    error: function(user, error) {
+      alert("User cancelled the Facebook login or did not fully authorize.");
+    }
+  });
+}
 
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
@@ -114,20 +127,6 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
-        
-	       
-	Parse.FacebookUtils.logIn(null, {
-	  success: function(user) {
-	    if (!user.existed()) {
-	      alert("User signed up and logged in through Facebook!");
-	    } else {
-	      alert("User logged in through Facebook!");
-	    }
-	  },
-	  error: function(user, error) {
-	    alert("User cancelled the Facebook login or did not fully authorize.");
-	  }
-	});
     });
   }
 function callGroups() {
@@ -156,12 +155,12 @@ function grabPosts() {
 	console.log(response);
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
-		    postsHTML += "<tr><div class="fb-post" data-href='" + data.actions[0].link + "'></div></tr>";
+		    postsHTML += "<tr><div class='fb-post' data-href='" + data.actions[0].link + "'></div></tr>"
 		    //postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
 		    //postsHTML += data.message + "</td></tr>"
 		    //console.log(data.message);
 		}
-		$('#displayPosts').append(postsHTML);
+		$('#posts').append(postsHTML);
 	}
       else {
         console.log(response); 
