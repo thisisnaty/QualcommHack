@@ -27,6 +27,12 @@ $('#cssmenu > ul > li > a').click(function() {
 
 Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe21T7LLLHly1nm9plKyKydMr");
 
+$(window).ready(function() {
+    $('#loading').hide();
+});
+
+
+
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
