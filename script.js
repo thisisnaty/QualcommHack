@@ -1,5 +1,6 @@
 var actualContent;
 var postArray; 
+$('#loading').show();
 ( function( $ ) {
 $( document ).ready(function() {
 $('#cssmenu ul ul li:odd').addClass('odd');
