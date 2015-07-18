@@ -1,6 +1,7 @@
 var actualContent;
 var postArray; 
 var eventArray;
+var listOfUsers;
 $('#loading').show();
 ( function( $ ) {
 $( document ).ready(function() {
@@ -157,11 +158,11 @@ function getProfilePic(id) {
 
 function loadUsers() {
 	console.log("loading users...");
-	var users = getUsers();
+	getUsers();
 	var postsHTML = "";
-      	console.log(users);
-	for (var i = 0; i < users.length; i++) {
-	    var user = users[i];
+      	console.log(listOfUsers);
+	for (var i = 0; i < listOfUsers.length; i++) {
+	    var user = listOfUsers[i];
 	    console.log(user);
 	    var profilePic = FB.api(
 		    "/" + user.facebookId + "/picture",
@@ -184,7 +185,7 @@ function loadUsers() {
 }
  
 function getUsers() {
-	var listOfUsers = [];
+	listOfUsers = [];
 	var query = new Parse.Query(Parse.User);
 	// query.equalTo("gender", "female");  // find all the women
 	query.find({
@@ -202,7 +203,6 @@ function getUsers() {
 	});
 	console.log("printing list of users...");
 	console.log(listOfUsers);
-	return listOfUsers;
 }
 
 function getCurrentUserInfo(){
