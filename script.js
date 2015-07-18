@@ -180,8 +180,8 @@ function loadUsers() {
 	    //console.log(data.message);
 	}
 	$('#loading').hide();
-	$('#posts').append(postsHTML);
-	$('#posts').css("display", "table");
+	$('#people').append(postsHTML);
+	$('#people').css("display", "table");
 }
  
 function getUsers() {
