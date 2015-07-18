@@ -226,8 +226,8 @@ FB.api(
       if (response && !response.error) {
   
         	 eventArray = response.data;
-      		console.log(eventsArray.length); 
-		for (var i = 0; i < eventsArray.length; i++) {
+      		console.log(eventArray.length); 
+		for (var i = 0; i < eventArray.length; i++) {
 		    var data = response.data[i];
 		    
 		    //eventsHTML += "<tr id='allEvents"+ i + "'><th id='backgroundIMG' colspan='4'> <img id='eventIMG' src='" + data.picture + "'/></th></tr>";
