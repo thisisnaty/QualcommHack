@@ -134,9 +134,10 @@ function grabPosts() {
 		    {
 		    	postsHTML += "<embed src='" + data.link + "'>"
 		    }
-		    var output = (data.message).substring(0, (data.message).lastIndexOf('//') + 1);
-		    postsHTML += data.message + "</td></tr>"
-		    console.log(data.message);
+		    var message = data.message;
+		    var output = (message).substring(0, (message).lastIndexOf('//') + 1);
+		    postsHTML += output + "</td></tr>"
+		    //console.log(data.message);
 		}
 		$('#displayPosts').append(postsHTML);
 	}
