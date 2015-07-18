@@ -60,6 +60,7 @@ table#top{
 	  top: 0;
 	  left: 0;
 	  z-index: 1000;
+	  height: 85px;
 	  background-color: rgb(4, 70, 108);
 }
 
