@@ -255,7 +255,7 @@ function grabInternshipPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("internships") < -1) {
+			    if ((data.message).indexOf("internships") = -1) {
 			    	var rowToHide = "#allPosts" + i;
 			    	$(rowToHide).hide();
 			    	//console.log(data.message); 
