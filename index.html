@@ -93,8 +93,9 @@
         'Thanks for logging in, ' + response.name + '!';
     });
   }
-  
+function callGroups() {
   /* make the API call */
+  console.log('you called the groups function.... '); 
   FB.api(
       "/{group-id}",
       function (response) {
@@ -104,6 +105,7 @@
         }
       }
   );
+}
   
 </script>
 
