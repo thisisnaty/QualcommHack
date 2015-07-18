@@ -215,6 +215,55 @@ function loadFirst(table){
 );
 }
 
+function loadContent(table) {
+	$('#active').removeAttr('id');
+	  $('.circle.' + table + 'Icon').attr('id', 'active');
+	  $('#' + actualContent).css({"display": "none"});
+	  actualContent = table;
+	  switch(table) {
+	  	case "posts":
+	  		grabPosts();
+	  		break;
+	  	case "people":
+	  		break;
+	  	case "events":
+	  		break;
+	  	case "files":
+	  		break;
+	  	case "photos":
+	  		break;
+	  }
+	  $('#' + table).css("display", "table");
+}
+
+function grabPosts(){
+		var postsHTML ="";
+  console.log('you asked for the feed .... '); 
+  FB.api(
+    "/AspirationsAward/feed?limit=50",
+    function (response) {
+      if (response && !response.error) {
+		for (var i = 0; i < response.data.length; i++) {
+		    var data = response.data[i];
+		    
+		    //postsHTML += "<tr><div class='fb-post' data-href='" + data.actions[0].link + "' data-width='500px'></div></tr>";
+		    postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td id='postMessage'>";
+		    postsHTML += "<a class='profileLink' href='" + data.actions[0].link + "'>" + data.message + " </a></td></tr>"
+		    //console.log(data.message);
+		}
+		$('#posts').append(postsHTML);
+	}
+      else {
+        console.log(response); 
+      }
+    }
+);
+}
+
+function grabPeople(){
+	
+}
+
 
 
 /*function loadContent(table) {
