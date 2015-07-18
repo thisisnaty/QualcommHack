@@ -69,7 +69,7 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
   });
 
 
-Parse.FacebookUtils.logIn(null, {
+Parse.FacebookUtils.logIn("public_profile,email,user_groups,user_education_history,user_work_history,user_friends,friends_groups", {
   success: function(user) {
     if (!user.existed()) {
       alert("User signed up and logged in through Facebook!");
