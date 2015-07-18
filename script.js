@@ -160,9 +160,10 @@ function loadUsers() {
 	var users = getUsers();
 	var postsHTML = "";
       	postArray = response.data; 
+      	console.log(users);
 	for (var i = 0; i < users.length; i++) {
 	    var user = users[i];
-	    
+	    console.log(user);
 	    var profilePic = FB.api(
 		    "/" + user.facebookId + "/picture",
 		    function (response) {
@@ -190,13 +191,11 @@ function getUsers() {
 	// query.equalTo("gender", "female");  // find all the women
 	query.find({
 	  success: function(users) {
-	    console.log(users);
 	    for (var i = 0; i < users.length; i++) {
 	    	if ('firstName' in users[i]._serverData) {
 	    		listOfUsers.push(users[i]._serverData);
 	    	}
 	    }
-	    console.log(listOfUsers);
 	    return listOfUsers;
 	  },
 	  error: function(users, error) {
