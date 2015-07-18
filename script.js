@@ -281,7 +281,6 @@ function grabInternshipPosts(){
 		}
 		$('#posts').append(postsHTML);
 	}
-);
 }
 
 /*function loadContent(table) {
