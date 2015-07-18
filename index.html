@@ -124,7 +124,7 @@ function grabPosts() {
     "/AspirationsAward/feed?limit=50",
     function (response) {
       if (response && !response.error) {
-        JSONObject json = new JSONObject(response)
+        JSONObject json = new JSONObject(response); 
 	JSONArray jarray = json.getJSONArray("data");
 	for(int i = 0; i < jarray.length(); i++){
 	  JSONObject onePost = jarray.getJSONObject(i);
@@ -141,7 +141,7 @@ function grabPosts() {
 }
 
 function getMembers() {
-  console.log('retrieving members ... ')
+  console.log('retrieving members ... '); 
 /* make the API call */
 FB.api(
     "/AspirationsAward/members",
