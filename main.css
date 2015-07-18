@@ -24,13 +24,13 @@ table#top{
 #postIMG {
 	max-width:70px;
 	height:70px;
-	-webkit-border-radius: 35px;
-    	-moz-border-radius: 35px;
-    	border-radius:35px;
 }
 
 .content > td{
 	background-color:rgb(4, 70, 108);
+}
+.content > tr {
+	padding:5px;
 }
 #postMessage {
 	margin-left:45px;
