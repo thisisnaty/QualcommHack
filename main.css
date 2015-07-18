@@ -6,6 +6,10 @@ body {
 	font-size: 24px;
 	color: white;
 }
+
+#backgroundIMG {
+	background-color: rgb(4, 70, 108);	
+}
 table#top{
 	-webkit-border-horizontal-spacing: 20px;
 	-webkit-border-vertical-spacing: 2px;
