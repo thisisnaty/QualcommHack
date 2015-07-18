@@ -276,6 +276,16 @@ function loadContent(table) {
      }
  );
  }
+ 
+function getUsers() {
+	var query = new Parse.Query(Parse.User);
+	// query.equalTo("gender", "female");  // find all the women
+	query.find({
+	  success: function(users) {
+	    console.log(users);
+	  }
+	});
+}
 
 function getCurrentUserInfo(){
 	FB.api('/me', function(response) {
