@@ -72,7 +72,6 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
 	    } else {
 	      alert("User logged in through Facebook!");
 	    }
-	    callGroups();
 	    
 	  },
 	  error: function(user, error) {
@@ -125,6 +124,7 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
+        callGroups();
     });
   }
 function callGroups() {
