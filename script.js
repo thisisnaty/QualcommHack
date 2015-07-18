@@ -125,7 +125,13 @@ function grabPosts() {
 	console.log(response);
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
-		    var postsHTML = "<tr><td> <img src='" + data.image + "'/></td><td>" + data.message +" </td></tr>"
+		    var postsHTML = "<tr><td> <img src='" + data.image + "'/></td><td>";
+		    if (data.link != null)
+		    {
+		    	postsHTML += "<embed src='" + data.link + "'>"
+		    }
+		    postsHTML += data.message + "</td></tr>"
+		    
 		    $('#posts').append(postsHTML);
 		    console.log(data.message);
 		}
