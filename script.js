@@ -195,12 +195,14 @@ function loadFirst(table){
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
 		    
-		    postsHTML += "<tr>" +
+		    /*postsHTML += "<tr>" +
 		    			"<div class='fb-post' data-href='" + data.actions[0].link + "' data-width='500px'>" +
 		    			"</div>" +
-		    		"</tr>";
-		    //postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
-		    //postsHTML += data.message + "</td></tr>"
+		    		"</tr>";*/
+		    
+		    postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
+		    postsHTML += "<a href='" + data.actions[0].link + "'>" + data.message + "</a></td></tr>"
+		    
 		    //console.log(data.message);
 		}
 		$('#' + table).append(postsHTML);
