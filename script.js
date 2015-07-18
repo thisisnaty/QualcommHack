@@ -159,7 +159,6 @@ function loadUsers() {
 	console.log("loading users...");
 	var users = getUsers();
 	var postsHTML = "";
-      	postArray = response.data; 
       	console.log(users);
 	for (var i = 0; i < users.length; i++) {
 	    var user = users[i];
