@@ -22,9 +22,9 @@ table#top{
 	height:70px;
 }
 #postMessage {
-	margin:0px;
+	margin-left:40px;
 }
-a.profileLink:link
+a.profileLink
 {
    text-decoration: none;
 }
