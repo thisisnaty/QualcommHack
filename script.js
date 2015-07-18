@@ -58,13 +58,24 @@ Parse.initialize("Tr0epOMYD8xXYa22R3Uc8MhEGMYGLuoA0J05aYv3", "o3ki0HSrtxHj0Dcq4L
   }
 
   window.fbAsyncInit = function() {
-  FB.init({
+  Parse.FacebookUtils.init({
     appId      : '320286661453691',
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.2' // use version 2.2
   });
+
+if (!Parse.FacebookUtils.isLinked(user)) {
+  Parse.FacebookUtils.link(user, null, {
+    success: function(user) {
+      alert("Woohoo, user logged in with Facebook!");
+    },
+    error: function(user, error) {
+      alert("User cancelled the Facebook login or did not fully authorize.");
+    }
+  });
+}
 
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
@@ -130,10 +141,10 @@ function grabPosts() {
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
 		    postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
-		    /*if (data.link != null)
+		    if (data.link != null)
 		    {
 		    	postsHTML += "<embed src='" + data.link + "'>"
-		    }*/
+		    }
 		    postsHTML += data.message + "</td></tr>"
 		    //console.log(data.message);
 		}
