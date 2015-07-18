@@ -124,6 +124,20 @@ function grabPosts() {
     }
 );
 }
+
+function getMembers() {
+  console.log('retrieving members .. ')
+    "/AspirationsAward/members",
+    function (response) {
+      if (response && !response.error) {
+        console.log(response);
+      }
+      else {
+        console.log(response);
+      }
+    }
+);
+}
   
 </script>
 
