@@ -285,7 +285,24 @@ function grabMyInfo(){
              // We save the data on the Parse user
              user.set("firstName", response.first_name);
              user.set("lastName", response.last_name);
-             console.log(user);
+             var schoolName;
+             var education = response.education;
+             for (var i = 0; i < education.length; i++) {
+             	var institution = education[i];
+             	if (institution.type == "College") {
+             		schoolName = institution.school.name;
+             	}
+             }
+             if (schoolName != null) {
+             	user.set("college", schoolName);
+             	console.log("set college")
+             }
+             var employers = [];
+             var workplaces = response.work;
+             for (var i = 0; i< workplaces.length; i++) {
+             	employers.push(workplaces[i].employer.name);
+             }
+             user.set("employers", employers);
              user.save(null, {
                success: function(user) {
                  console.log("successfully saved user information")
