@@ -283,7 +283,6 @@ function grabMembers() {
 }
  
 function getUsers() {
-	actualContent = "people";
 	listOfUsers = [];
 	var query = new Parse.Query(Parse.User);
 	// query.equalTo("gender", "female");  // find all the women
