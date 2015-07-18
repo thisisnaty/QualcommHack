@@ -193,6 +193,7 @@ function getUsers() {
 	    for (var i = 0; i < users.length; i++) {
 	    	if ('firstName' in users[i]._serverData) {
 	    		listOfUsers.push(users[i]._serverData);
+	    		console.log(listOfUsers);
 	    	}
 	    }
 	  },
