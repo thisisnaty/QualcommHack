@@ -227,8 +227,8 @@ FB.api(
 		for (var i = 0; i < eventsArray.length; i++) {
 		    var data = response.data[i];
 		    
-		    eventsHTML += "<tr id='allEvents"+ i + "'><th id='backgroundIMG' colspan='4'> <img id='eventIMG' src='" + data.picture + "'/></th></tr>";
-		    eventsHTML += "<tr><td>" + data.name + "</td><td>" + data.owner + "</td><td>" + data.place + "</td><td>" + data.start_time + "</td></tr>";
+		    //eventsHTML += "<tr id='allEvents"+ i + "'><th id='backgroundIMG' colspan='4'> <img id='eventIMG' src='" + data.picture + "'/></th></tr>";
+		    eventsHTML += "<tr><td>" + data.name + "</td><td>" + data.description + "</td><td>" + "</td><td>" + data.start_time + "</td></tr>";
 		    
 		    //console.log(data.message);
 		}
