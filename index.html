@@ -43,9 +43,10 @@
 		<!-- for parse to work, we need a custom login button - cannot use the one below :(- ->
 		<!--<fb:login-button scope="public_profile,email,user_groups,user_education_history,user_work_history,user_friends,friends_groups" onlogin="checkLoginState();" style="margin-top: 70px">-->
 		<!--</fb:login-button>-->
-		
+			<div>
 		         <input id ="searchBar" class='searchPosts' type="text" placeholder="Search for posts" required>
 		         <input type="button" class='searchButton' value="Search" onclick="searchBar()">
+		         </div>
 		  	<p id='sidebarTitle'> <i>Filter Posts By </i></p>
 			<ul>
 			   <li><a href='#' class='active' onclick="grabAllPosts()"><span>All</span></a></li>
