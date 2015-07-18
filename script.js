@@ -107,8 +107,7 @@ function callGroups() {
       "/AspirationsAward",
       function (response) {
         if (response && !response.error) {
-       	  console.log(response);
-          return (response); 
+          console.log(response.id); 
         }
         else {
           console.log(response); 
@@ -118,6 +117,7 @@ function callGroups() {
 }
 
 function grabPosts() {
+	var postsHTML ="";
   console.log('you asked for the feed .... '); 
   FB.api(
     "/AspirationsAward/feed?limit=50",
@@ -126,16 +126,15 @@ function grabPosts() {
 	console.log(response);
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
-		    var postsHTML = "<tr><td> <img src='" + data.image + "'/></td><td>";
-		    if (data.link != null)
+		    postsHTML += "<tr><td> <img src='" + data.image + "'/></td><td>";
+		   /* if (data.link != null)
 		    {
 		    	postsHTML += "<embed src='" + data.link + "'>"
-		    }
+		    }*/
 		    postsHTML += data.message + "</td></tr>"
-		    
-		    $('#posts').append(postsHTML);
 		    console.log(data.message);
 		}
+		$('#displayPosts').append(postsHTML);
 	}
       else {
         console.log(response); 
