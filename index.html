@@ -10,6 +10,17 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
+$( document ).ready(function() {
+    FB.init({
+	  appId: NCWITconnect,
+	  frictionlessRequests: true,
+	  status: true,
+	  version: 'v2.3'
+	});
+
+	FB.Event.subscribe('auth.authResponseChange', onAuthResponseChange);
+	FB.Event.subscribe('auth.statusChange', onStatusChange);
+});
   </script>
 	<h1>Hello World hi</h2>
 		<div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
