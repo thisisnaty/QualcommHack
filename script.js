@@ -190,7 +190,7 @@ function loadFirst(table){
   var postsHTML ="";
   console.log('you asked for the feed .... '); 
   FB.api(
-    "/AspirationsAward/feed?limit=50",
+    "/AspirationsAward/feed?limit=10",
     function (response) {
       if (response && !response.error) {
       		postArray = response.data; 
