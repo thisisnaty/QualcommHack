@@ -22,13 +22,12 @@ table#top{
 	height:70px;
 }
 #postMessage {
-	margin-left:40px;
+	margin-left:45px;
 }
 a.profileLink
 {
    color:black;
    font-family:'Segoe UI';
-   margin-left:40px;
    text-decoration: none;
 }
 
