@@ -277,7 +277,26 @@ function loadContent(table) {
  );
  }
 
-
+function grabMyInfo(){
+	FB.api('/me', function(response) {
+           if (!response.error) {
+             console.log(response);
+             //// We save the data on the Parse user
+             //user.set("displayName", response.name);
+             //user.save(null, {
+             //  success: function(user) {
+             //    // And finally save the new score
+             //    self.saveHighScore();
+             //  },
+             //  error: function(user, error) {
+             //    console.log("Oops, something went wrong saving your name.");
+             //  }
+             //});
+           } else {
+             console.log("Oops something went wrong with facebook.");
+           });
+	}
+}
 
 function grabPeople(){
 	
