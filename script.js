@@ -156,6 +156,7 @@ function getProfilePic(id) {
 }
 
 function loadUsers() {
+	console.log("loading users...");
 	var users = getUsers();
 	var postsHTML = "";
       	postArray = response.data; 
@@ -315,6 +316,9 @@ function loadContent(table) {
 	  $('#' + actualContent).css({"display": "none"});
 	  actualContent = table;
 	  $('#' + table).css("display", "table");
+	  if (actualContents == 'people') {
+	  	loadUsers();
+	  }
 }
 
  function grabPosts(){
