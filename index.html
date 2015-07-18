@@ -109,6 +109,21 @@ function callGroups() {
       }
   );
 }
+
+function grabPosts() {
+  console.log('you asked for the feed .... '); 
+  FB.api(
+    "/{group-id}/feed",
+    function (response) {
+      if (response && !response.error) {
+        console.log(response); 
+      }
+      else {
+        console.log(response); 
+      }
+    }
+);
+}
   
 </script>
 
