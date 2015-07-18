@@ -26,13 +26,14 @@ body {
     height: 22px;
 
     padding-right: 7px;
-    padding-left: 29px;
+    padding-left: 7px;
 
     font-weight: bold;
     font-size: 11px;
     color: white;
     text-decoration: none;
     font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size:11px;
     line-height: 22px;
 
     cursor: pointer;
