@@ -124,9 +124,8 @@ function grabPosts() {
     "/AspirationsAward/feed?limit=50",
     function (response) {
       if (response && !response.error) {
-    	var obj = JSON.parse(response);
 
-	console.log(obj.count);
+	console.log(response.message);
 	}
       else {
         console.log(response); 
