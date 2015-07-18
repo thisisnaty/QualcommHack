@@ -17,6 +17,12 @@ table#top{
 	background-color:white;
 	margin-left:350px;
 }
+
+#displayPosts > img {
+	width:70px;
+	height:70px;
+	border-radius:50%;
+}
 #title {
 	font-size: 36px;
 }
