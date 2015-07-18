@@ -15,6 +15,10 @@ body {
 
 #loading {
     position: absolute; width: 100%; height: 100%; background: url('http://1upevents.com/thanks-cat.gif') no-repeat center center;
+    	font-family: 'Segoe UI';
+	font-weight: normal;
+	font-size: 24px;
+	color: white;
 }
 
 .facebook_button {
