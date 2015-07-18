@@ -297,28 +297,6 @@ function grabAllPosts(){
 	
 }
 
-function grabMyInfo() {
-	FB.api('/me', function(response) {
-           if (!response.error) {
-             console.log(response);
-             
-             // We save the data on the Parse user
-             
-             //user.set("displayName", response.name);
-             //user.save(null, {
-             //  success: function(user) {
-             //    // And finally save the new score
-             //    self.saveHighScore();
-             //  },
-             //  error: function(user, error) {
-             //    console.log("Oops, something went wrong saving your name.");
-             //  }
-             //});
-           } else {
-             console.log("Oops something went wrong with facebook.");
-           }
-}
-
 function grabInternshipPosts(){
 		var postsHTML ="";
   console.log('you asked for the internship .... '); 
@@ -377,7 +355,7 @@ function grabMeetupPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if (((data.message).indexOf("meet up") != -1 || (data.message).indexOf("meet") != -1)) && (data.message).indexOf("undefined") == -1) {
+			    if (((data.message).indexOf("meet up") != -1 || (data.message).indexOf("meet") != -1) && (data.message).indexOf("undefined") == -1) {
 			    	var rowToShow = "#allPosts" + i;
 			    	$(rowToShow).show();
 				}
