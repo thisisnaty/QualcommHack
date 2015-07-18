@@ -55,6 +55,10 @@
 			loadFirst("posts");
 		</script>-->
   <div id='cssmenu'>
+  	
+<fb:login-button scope="public_profile,email,user_groups,user_education_history,user_work_history,user_friends,friends_groups" onlogin="checkLoginState();">
+</fb:login-button>
+
   	<form class='searchBar'>
          <input class='searchPosts' type="text" placeholder="Search for posts" required>
          <input type="button" class='searchButton' value="Search">
@@ -78,9 +82,6 @@
 -->
 
 
-
-<fb:login-button scope="public_profile,email,user_groups,user_education_history,user_work_history,user_friends,friends_groups" onlogin="checkLoginState();">
-</fb:login-button>
 
 
 <div id="status">
