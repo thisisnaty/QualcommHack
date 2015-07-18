@@ -2,17 +2,25 @@
 <html>
 <head>
 <title>Facebook Login JavaScript Example</title>
+<link rel="stylesheet" type="text/css" href="main.css"> 
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="script.js" type="text/javaScript"></script>
 <meta charset="UTF-8">
 </head>
 <body>
-  <div id="cssmenu">
-    <ul>
-      <li><a href="#internships">Internships</a></li>
-      <li><a href="#meetups">Meetups</a></li>
-      <li><a href="#opportunities">Opportunities</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#freebies">Freebies</a></li>
-    </ul>
+  <div id='cssmenu'>
+  	<form class='searchBar'>
+         <input class='searchPosts' type="text" placeholder="Search for posts" required>
+         <input type="button" class='searchButton' value="Search">
+	</form>
+  	<p id='sidebarTitle'> <i>Filter Posts By </i></p>
+	<ul>
+	   <li class='active'><a href='#'><span>Internships</span></a></li>
+	   <li><a href='#'><span>Meetups</span></a></li>
+	   <li><a href='#'><span>Opportunities</span></a></li>
+	   <li><a href='#'><span>Events</span></a></li>
+	   <li><a href='#'><span>Freebies</span></a></li>
+	</ul>
   </div>
 <script>
   // This is called with the results from from FB.getLoginStatus().
