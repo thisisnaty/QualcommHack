@@ -1,4 +1,3 @@
-var loggedIn;
 ( function( $ ) {
 $( document ).ready(function() {
 $('#cssmenu ul ul li:odd').addClass('odd');
@@ -37,7 +36,7 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
-      var user = Parse.User.current();
+        var user = Parse.User.current();
 	if (!Parse.FacebookUtils.isLinked(user)) {
 	  Parse.FacebookUtils.link(user, null, {
 	    success: function(user) {
@@ -86,19 +85,6 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.2' // use version 2.2
   });
-
-
-var user = Parse.User.current();
-if (!Parse.FacebookUtils.isLinked(user)) {
-  Parse.FacebookUtils.link(user, null, {
-    success: function(user) {
-      alert("Woohoo, user logged in with Facebook!");
-    },
-    error: function(user, error) {
-      alert("User cancelled the Facebook login or did not fully authorize.");
-    }
-  });
-}
 
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
