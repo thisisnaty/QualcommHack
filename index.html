@@ -108,13 +108,6 @@ function callGroups() {
       "/AspirationsAward",
       function (response) {
         if (response && !response.error) {
-      	  var jsonData = {};
-    	  response.data.forEach(function(column) 
-    {
-        var columnName = column.metadata.colName;
-        jsonData[columnName] = column.value;
-    });
-    viewData.employees.push(jsonData);
           console.log(response.data); 
           return response.data;
         }
