@@ -310,7 +310,7 @@ function grabMeetupPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("meet up") == -1 || (data.message).indexOf("meet") == -1) {
+			    if ((data.message).indexOf("meet up") != -1 || (data.message).indexOf("meet") != -1) {
 			    	var rowToShow = "#allPosts" + i;
 			    	$(rowToShow).show();
 				}
