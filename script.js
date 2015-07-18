@@ -1,7 +1,5 @@
 var actualContent;
 var postArray; 
-
- $('#loading').show();
 ( function( $ ) {
 $( document ).ready(function() {
 $('#cssmenu ul ul li:odd').addClass('odd');
@@ -28,6 +26,12 @@ $('#cssmenu > ul > li > a').click(function() {
 } )( jQuery );
 
 Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe21T7LLLHly1nm9plKyKydMr");
+
+$(window).ready(function() {
+    $('#loading').hide();
+});
+
+
 
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -295,6 +299,85 @@ function grabInternshipPosts(){
 		//$('#posts').append(postsHTML);
 	}
 
+function grabMeetupPosts(){
+		var postsHTML ="";
+  console.log('you asked for the meetups .... '); 
+		for (var i = 0; i < postArray.length; i++) {
+		    var data = postArray[i];
+		    if ((typeof data.message) == "string") {
+			    if ((data.message).indexOf("meet up") == -1 || (data.message).indexOf("meet") == -1) {
+			    	var rowToShow = "#allPosts" + i;
+			    	$(rowToShow).show();
+				}
+				else
+				{
+					var rowToHide = "#allPosts" + i;
+			    		$(rowToHide).hide();
+						
+				}
+			}
+		}
+	}
+
+function grabEventPosts(){
+		var postsHTML ="";
+  console.log('you asked for the events .... '); 
+		for (var i = 0; i < postArray.length; i++) {
+		    var data = postArray[i];
+		    if ((typeof data.message) == "string") {
+			    if ((data.message).indexOf("event") == -1 || (data.message).indexOf("next week") == -1
+			    || (data.message).indexOf("tomorrow") == -1 || (data.message).indexOf("tonight") == -1) {
+			    		var rowToShow = "#allPosts" + i;
+			    		$(rowToShow).show();
+				}
+				else
+				{
+					var rowToHide = "#allPosts" + i;
+			    		$(rowToHide).hide();
+				}
+			}
+		}
+	}
+	
+	function grabOpportunityPosts(){
+		var postsHTML ="";
+  		console.log('you asked for the opportunities .... '); 
+		for (var i = 0; i < postArray.length; i++) {
+		    var data = postArray[i];
+		    if ((typeof data.message) == "string") {
+			    if ((data.message).indexOf("opportunity") == -1 || (data.message).indexOf("scholarship") == -1
+			    || (data.message).indexOf("award") == -1 || (data.message).indexOf("honor") == -1) {
+			    		var rowToShow = "#allPosts" + i;
+			    		$(rowToShow).show();
+				}
+				else
+				{
+					var rowToHide = "#allPosts" + i;
+			    		$(rowToHide).hide();
+				}
+			}
+		}
+	}
+	
+	function grabFreebies(){
+		var postsHTML ="";
+  console.log('you asked for the events .... '); 
+		for (var i = 0; i < postArray.length; i++) {
+		    var data = postArray[i];
+		    if ((typeof data.message) == "string") {
+			    if ((data.message).indexOf("free") == -1 || (data.message).indexOf("sale") == -1
+			    || (data.message).indexOf("promo") == -1 || (data.message).indexOf("win") == -1 ){
+			    		var rowToShow = "#allPosts" + i;
+			    		$(rowToShow).show();
+				}
+				else
+				{
+					var rowToHide = "#allPosts" + i;
+			    		$(rowToHide).hide();
+				}
+			}
+		}
+	}
 
 /*function loadContent(table) {
   $('#active').removeAttr('id');
