@@ -179,7 +179,6 @@ function loadUsers() {
 	    
 	    //console.log(data.message);
 	}
-	$('#loading').hide();
 	$('#people').append(postsHTML);
 	$('#people').css("display", "table");
 }
