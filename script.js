@@ -285,15 +285,14 @@ function grabMyInfo(){
              // We save the data on the Parse user
              user.set("firstName", response.first_name);
              user.set("lastName", response.last_name);
-             //user.save(null, {
-             //  success: function(user) {
-             //    // And finally save the new score
-             //    self.saveHighScore();
-             //  },
-             //  error: function(user, error) {
-             //    console.log("Oops, something went wrong saving your name.");
-             //  }
-             //});
+             user.save(null, {
+               success: function(user) {
+                 console.log("successfully saved user information")
+               },
+               error: function(user, error) {
+                 console.log("Oops, something went wrong saving user info.");
+               }
+             });
            } else {
              console.log("Oops something went wrong with facebook.");
            }
