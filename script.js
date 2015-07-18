@@ -281,6 +281,7 @@ function grabMyInfo(){
 	FB.api('/me', function(response) {
            if (!response.error) {
              console.log(response);
+             user = Parse.User.current();
              // We save the data on the Parse user
              user.set("firstName", response.first_name);
              user.set("lastName", response.last_name);
