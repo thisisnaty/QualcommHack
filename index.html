@@ -124,7 +124,14 @@ function grabPosts() {
     "/AspirationsAward/feed?limit=50",
     function (response) {
       if (response && !response.error) {
-        console.log(response); 
+        JSONObject json = new JSONObject(response)
+	JSONArray jarray = json.getJSONArray("data");
+	for(int i = 0; i < jarray.length(); i++){
+	  JSONObject onePost = jarray.getJSONObject(i);
+	  //get your values
+	  onePost.getJSONString("caption"); // this will return you the post's caption
+	  onePost.getJSONString("message"); // will return message of the post
+	}
       }
       else {
         console.log(response); 
@@ -148,6 +155,8 @@ FB.api(
     }
 );
 }
+
+
   
 </script>
 
