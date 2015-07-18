@@ -16,20 +16,7 @@ table#top{
 	  z-index: 9999;
 	  background-color: rgb(4, 70, 108);
 }
-#displayPosts {
-	font-size:14px;
-	color:black;
-	background-color:white;
-	margin-left:350px;
-}
 
-#displayPosts > img {
-	width:70px;
-	height:70px;
-	-webkit-border-radius: 35px;
-    	-moz-border-radius: 35px;
-    	border-radius:35px;
-}
 #title {
 	font-size: 36px;
 }
@@ -72,6 +59,7 @@ table#top{
 	color:black;
 	background-color:white;
 	margin-left:350px;
+	margin-top:65px;
 }
 
 #posts > img {
@@ -151,6 +139,7 @@ form {
   width: 350px;
   height: 100%;
   position:fixed;
+  float:left;
   background: rgba(000,0,0,0.6);  
 }
 #cssmenu > ul > li {
