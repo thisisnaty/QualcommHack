@@ -66,6 +66,7 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
     version    : 'v2.2' // use version 2.2
   });
 
+
 Parse.FacebookUtils.logIn(null, {
   success: function(user) {
     if (!user.existed()) {
@@ -79,6 +80,7 @@ Parse.FacebookUtils.logIn(null, {
   }
 });
 
+var user = Parse.User.current();
 if (!Parse.FacebookUtils.isLinked(user)) {
   Parse.FacebookUtils.link(user, null, {
     success: function(user) {
