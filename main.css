@@ -23,6 +23,12 @@ table#top{
 }
 #postMessage {
 	margin-left:45px;
+	padding:5px;
+	border-bottom: 1px solid #4c4e53;
+}
+
+#postMessage:hover {
+	background-color: #292929;
 }
 a.profileLink
 {
@@ -31,11 +37,6 @@ a.profileLink
    text-decoration: none;
 }
 
-a.profileLink:hover
-{
-   color: rgb(4, 70, 108);
-   text-decoration: none;
-}
 #bottom {
 	margin-left:350px;
 }
@@ -79,7 +80,7 @@ a.profileLink:hover
 	display: none;
 	font-size:14px;
 	color:black;
-	background-color:white;
+	background-color: rgb(4, 70, 108);
 	margin-left:0px;
 	margin-top:65px;
 }
