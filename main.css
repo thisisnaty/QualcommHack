@@ -26,6 +26,8 @@ table#top{
 }
 a.profileLink
 {
+   color:black;
+   margin-left:40px;
    text-decoration: none;
 }
 
