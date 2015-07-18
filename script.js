@@ -323,7 +323,7 @@ function grabInternshipPosts(){
 	}
 
 
-function searchBar(){
+function searchBar() {
 		var postsHTML ="";
   console.log('you searched .... ');
   console.log((document.getElementById("searchBar").value)); 
@@ -347,7 +347,7 @@ function searchBar(){
 			}
 		}
 		//$('#posts').append(postsHTML);
-	}
+}
 
 function grabMeetupPosts(){
 		var postsHTML ="";
