@@ -66,6 +66,19 @@ Parse.initialize("Tr0epOMYD8xXYa22R3Uc8MhEGMYGLuoA0J05aYv3", "o3ki0HSrtxHj0Dcq4L
     version    : 'v2.2' // use version 2.2
   });
 
+Parse.FacebookUtils.logIn(null, {
+  success: function(user) {
+    if (!user.existed()) {
+      alert("User signed up and logged in through Facebook!");
+    } else {
+      alert("User logged in through Facebook!");
+    }
+  },
+  error: function(user, error) {
+    alert("User cancelled the Facebook login or did not fully authorize.");
+  }
+});
+
 if (!Parse.FacebookUtils.isLinked(user)) {
   Parse.FacebookUtils.link(user, null, {
     success: function(user) {
@@ -141,6 +154,10 @@ function grabPosts() {
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
 		    postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
+		    if (data.link != null)
+		    {
+		    	postsHTML += "<embed src='" + data.link + "'>"
+		    }
 		    postsHTML += data.message + "</td></tr>"
 		    //console.log(data.message);
 		}
