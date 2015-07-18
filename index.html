@@ -110,7 +110,7 @@ function callGroups() {
       "/AspirationsAward",
       function (response) {
         if (response && !response.error) {
-          console.log(response); 
+          console.log(response.id); 
         }
         else {
           console.log(response); 
@@ -125,14 +125,13 @@ function grabPosts() {
     "/AspirationsAward/feed?limit=50",
     function (response) {
       if (response && !response.error) {
-
+	console.log(response);
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
 		    var postsHTML = "<tr><td> <img src='" + data.image + "'/></td><td>" + data.message +" </td></tr>"
 		    $('#posts').append(postsHTML);
-		   
+		    console.log(data.message);
 		}
-		console.log(response); 
 	}
       else {
         console.log(response); 
