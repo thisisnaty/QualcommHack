@@ -147,13 +147,11 @@ FB.api(
   Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
-  
-  user_education_history,user_work_history,
 -->
 
 
 
-<fb:login-button scope="public_profile,email,user_groups,user_friends" onlogin="checkLoginState();">
+<fb:login-button scope="public_profile,email,user_groups,user_education_history,user_work_history,user_friends" onlogin="checkLoginState();">
 </fb:login-button>
 
 <div id="status">
