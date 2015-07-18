@@ -17,6 +17,19 @@ table#top{
 	  background-color: rgb(4, 70, 108);
 }
 
+#postMessage {
+	margin:0px;
+}
+a.profileLink:link
+{
+   text-decoration: none;
+}
+
+a.profileLink:hover
+{
+   color: rgb(4, 70, 108);
+   text-decoration: none;
+}
 #bottom {
 	margin-left:350px;
 }
