@@ -195,6 +195,7 @@ function getUsers() {
 	    		listOfUsers.push(users[i]._serverData);
 	    	}
 	    }
+	    console.log(listOfUsers);
 	    return listOfUsers;
 	  },
 	  error: function(users, error) {
