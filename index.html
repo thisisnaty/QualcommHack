@@ -113,7 +113,7 @@ function callGroups() {
 function grabPosts() {
   console.log('you asked for the feed .... '); 
   FB.api(
-    "/AspirationsAward/feed",
+    "/AspirationsAward/feed?limit=50",
     function (response) {
       if (response && !response.error) {
         console.log(response); 
