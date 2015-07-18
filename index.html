@@ -127,6 +127,7 @@ function grabPosts() {
 
 function getMembers() {
   console.log('retrieving members .. ')
+  FB.api(
     "/AspirationsAward/members",
     function (response) {
       if (response && !response.error) {
