@@ -79,17 +79,6 @@ Parse.FacebookUtils.logIn(null, {
   }
 });
 
-if (!Parse.FacebookUtils.isLinked(user)) {
-  Parse.FacebookUtils.link(user, null, {
-    success: function(user) {
-      alert("Woohoo, user logged in with Facebook!");
-    },
-    error: function(user, error) {
-      alert("User cancelled the Facebook login or did not fully authorize.");
-    }
-  });
-}
-
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
