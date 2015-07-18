@@ -275,7 +275,8 @@ function grabInternshipPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("internships") == -1) {
+			    if ((data.message).indexOf("internship") == -1 || (data.message).indexOf("company") == -1 
+			    || (data.message).indexOf("intern") == -1 || (data.message).indexOf("companies") == -1) {
 			    	var rowToHide = "#allPosts" + i;
 			    	$(rowToHide).hide();
 			    	//console.log(data.message); 
@@ -321,7 +322,7 @@ function grabEventPosts(){
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
 			   if (((data.message).indexOf("event") != -1 || (data.message).indexOf("next week") != -1
-			    || (data.message).indexOf("tomorrow") != -1 || (data.message).indexOf("tonight") != -1) && (data.message) != "undefined") {
+			    || (data.message).indexOf("tomorrow") != -1 || (data.message).indexOf("tonight") != -1) && (data.message).indexOf("undefined") == -1) {
 			    		var rowToShow = "#allPosts" + i;
 			    		$(rowToShow).show();
 				}
