@@ -200,7 +200,7 @@ function loadFirst(table){
 		    			"</div>" +
 		    		"</tr>";*/
 		    
-		    postsHTML += "<tr><td id='postIMG'> <img src='" + data.picture + "'/></td><td id='postMessage'>";
+		    postsHTML += "<tr><td> <img id='postIMG' src='" + data.picture + "'/></td><td id='postMessage'>";
 		    postsHTML += "<a id='postLink' href='" + data.actions[0].link + "'>" + data.message + "</a></td></tr>"
 		    
 		    //console.log(data.message);
