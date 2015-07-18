@@ -35,6 +35,26 @@
 				</td>
 			</tr>
 		</table>
+		<div id='cssmenu'>
+  	
+		<button onclick="onLoginButtonClicked()" style="margin-top: 70px">Facebook Login</button>
+		<!-- for parse to work, we need a custom login button - cannot use the one below :(- ->
+		<!--<fb:login-button scope="public_profile,email,user_groups,user_education_history,user_work_history,user_friends,friends_groups" onlogin="checkLoginState();" style="margin-top: 70px">-->
+		<!--</fb:login-button>-->
+		
+		  	<form class='searchBar'>
+		         <input class='searchPosts' type="text" placeholder="Search for posts" required>
+		         <input type="button" class='searchButton' value="Search">
+			</form>
+		  	<p id='sidebarTitle'> <i>Filter Posts By </i></p>
+			<ul>
+			   <li class='active'><a href='#'><span>Internships</span></a></li>
+			   <li><a href='#'><span>Meetups</span></a></li>
+			   <li><a href='#'><span>Opportunities</span></a></li>
+			   <li><a href='#'><span>Events</span></a></li>
+			   <li><a href='#'><span>Freebies</span></a></li>
+			</ul>
+		  </div>
 		<table id="bottom">
 			<tr>
 				<td>
@@ -51,29 +71,6 @@
 				</td>
 			</tr>
 		</table>
-  <div id='cssmenu'>
-  	
-<button onclick="onLoginButtonClicked()" style="margin-top: 70px">Facebook Login</button>
-<!-- for parse to work, we need a custom login button - cannot use the one below :(- ->
-<!--<fb:login-button scope="public_profile,email,user_groups,user_education_history,user_work_history,user_friends,friends_groups" onlogin="checkLoginState();" style="margin-top: 70px">-->
-<!--</fb:login-button>-->
-
-  	<form class='searchBar'>
-         <input class='searchPosts' type="text" placeholder="Search for posts" required>
-         <input type="button" class='searchButton' value="Search">
-	</form>
-  	<p id='sidebarTitle'> <i>Filter Posts By </i></p>
-	<ul>
-	   <li class='active'><a href='#'><span>Internships</span></a></li>
-	   <li><a href='#'><span>Meetups</span></a></li>
-	   <li><a href='#'><span>Opportunities</span></a></li>
-	   <li><a href='#'><span>Events</span></a></li>
-	   <li><a href='#'><span>Freebies</span></a></li>
-	</ul>
-  </div>
-  <table id='displayPosts'>
-  </table>
-
 <!--
   Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
