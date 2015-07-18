@@ -285,6 +285,7 @@ function grabMyInfo(){
              // We save the data on the Parse user
              user.set("firstName", response.first_name);
              user.set("lastName", response.last_name);
+             user.set("facebookId", response.id);
              var schoolName;
              var education = response.education;
              for (var i = 0; i < education.length; i++) {
