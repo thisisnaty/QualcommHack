@@ -139,7 +139,18 @@ a.profileLink
 }
 #people {
 	display: none;
+	font-size:14px;
+	color:black;
+	background-color: rgb(4, 70, 108);
+	margin-left:0px;
+	margin-top:65px;
 }
+
+#people > img {
+	width:70px;
+	height:70px;
+}
+
 #posts {
 	display: none;
 	font-size:14px;
@@ -148,6 +159,7 @@ a.profileLink
 	margin-left:0px;
 	margin-top:65px;
 }
+
 
 #posts > img {
 	width:70px;
