@@ -361,7 +361,7 @@ function grabEventPosts(){
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
 			    if ((data.message).indexOf("free") != -1 || (data.message).indexOf("sale") != -1
-			    || (data.message).indexOf("promo") != -1 || (data.message).indexOf("win") != -1 ){
+			    || (data.message).indexOf("promo") != -1 || (data.message).indexOf(" win ") != -1 ){
 			    		var rowToShow = "#allPosts" + i;
 			    		$(rowToShow).show();
 				}
