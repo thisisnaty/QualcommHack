@@ -11,6 +11,12 @@ table#top{
 	-webkit-border-vertical-spacing: 2px;
 	width: 100%;
 }
+#displayPosts {
+	font-size:14px;
+	color:black;
+	background-color:white;
+	margin-left:350px;
+}
 #title {
 	font-size: 36px;
 }
