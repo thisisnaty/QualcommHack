@@ -277,7 +277,7 @@ function loadContent(table) {
  );
  }
 
-function grabMyInfo(){
+function getCurrentUserInfo(){
 	FB.api('/me', function(response) {
            if (!response.error) {
              console.log(response);
