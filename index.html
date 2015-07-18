@@ -59,9 +59,10 @@
 		</script>
   <div id='cssmenu'>
   	
-<button onclick="onLoginButtonClick()" style="margin-top: 70px"></button>
-<fb:login-button scope="public_profile,email,user_groups,user_education_history,user_work_history,user_friends,friends_groups" onlogin="checkLoginState();" style="margin-top: 70px">
-</fb:login-button>
+<button onclick="onLoginButtonClick()" style="margin-top: 70px">Facebook Login</button>
+// for parse to work, we need a custom login button - cannot use the one below :(
+<!--<fb:login-button scope="public_profile,email,user_groups,user_education_history,user_work_history,user_friends,friends_groups" onlogin="checkLoginState();" style="margin-top: 70px">-->
+<!--</fb:login-button>-->
 
   	<form class='searchBar'>
          <input class='searchPosts' type="text" placeholder="Search for posts" required>
