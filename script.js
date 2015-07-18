@@ -144,45 +144,109 @@ function callGroups() {
   loadFirst();
 }
 
-/*function grabPosts() {
-	var postsHTML ="";
-  console.log('you asked for the feed .... '); 
-  FB.api(
-    "/AspirationsAward/feed?limit=50",
-    function (response) {
-      if (response && !response.error) {
-		for (var i = 0; i < response.data.length; i++) {
-		    var data = response.data[i];
-		    
-		    postsHTML += "<tr><div class='fb-post' data-href='" + data.actions[0].link + "' data-width='500px'></div></tr>";
-		    //postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
-		    //postsHTML += data.message + "</td></tr>"
-		    //console.log(data.message);
-		}
-		$('#posts').append(postsHTML);
-	}
-      else {
-        console.log(response); 
-      }
-    }
-);
-}*/
-
-function getMembers() {
-  console.log('retrieving members ... '); 
-/* make the API call */
-FB.api(
-    "/AspirationsAward/members",
-    function (response) {
-      if (response && !response.error) {
-        console.log(response); 
-      }
-      else {
-        console.log(response); 
-      }
-    }
-);
+function getProfilePic(id) {
+	FB.api(
+	    "/" + id + "/picture",
+	    function (response) {
+	      if (response && !response.error) {
+	        /* handle the result */
+	      }
+	    }
+	);
 }
+
+function loadUsers() {
+	var users = getUsers();
+	var postsHTML = "";
+      	postArray = response.data; 
+	for (var i = 0; i < users.length; i++) {
+	    var user = users[i];
+	    
+	    var profilePic = FB.api(
+		    "/" + user.facebookId + "/picture",
+		    function (response) {
+		      if (response && !response.error) {
+		        return response.data.url;
+		      } else {
+		      	return "";
+		      }
+		    }
+		    );
+	    
+	    postsHTML += "<tr id='allPosts"+ i + "'><td id='backgroundIMG'> <img id='postIMG' src='" + profilePic + "'/></td><td id='postMessage'>";
+	    postsHTML += "<a class='profileLink' href='" + data.actions[0].link + "'>" + user.firstName + " " + user.lastName + "</a></td></tr>"
+	    
+	    //console.log(data.message);
+	}
+	$('#loading').hide();
+	$('#posts').append(postsHTML);
+	$('#posts').css("display", "table");
+}
+ 
+function getUsers() {
+	listOfUsers = [];
+	var query = new Parse.Query(Parse.User);
+	// query.equalTo("gender", "female");  // find all the women
+	query.find({
+	  success: function(users) {
+	    console.log(users);
+	    for (var i = 0; i < users.length; i++) {
+	    	if ('firstName' in users[i]._serverData) {
+	    		listOfUsers.push(users[i]._serverData);
+	    	}
+	    }
+	    console.log(listOfUsers);
+	    return listOfUsers;
+	  },
+	  error: function(users, error) {
+	  	console.log("error getting list of users");
+	  }
+	});
+}
+
+function getCurrentUserInfo(){
+	FB.api('/me', function(response) {
+           if (!response.error) {
+             console.log(response);
+             user = Parse.User.current();
+             // We save the data on the Parse user
+             user.set("firstName", response.first_name);
+             user.set("lastName", response.last_name);
+             user.set("facebookId", response.id);
+             var schoolName;
+             var education = response.education;
+             for (var i = 0; i < education.length; i++) {
+             	var institution = education[i];
+             	if (institution.type == "College") {
+             		schoolName = institution.school.name;
+             	}
+             }
+             if (schoolName != null) {
+             	user.set("college", schoolName);
+             	console.log("set college")
+             }
+             var employers = [];
+             var workplaces = response.work;
+             for (var i = 0; i< workplaces.length; i++) {
+             	employers.push(workplaces[i].employer.name);
+             }
+             user.set("employers", employers);
+             user.save(null, {
+               success: function(user) {
+                 console.log("successfully saved user information")
+                 console.log(user);
+               },
+               error: function(user, error) {
+                 console.log("Oops, something went wrong saving user info.");
+               }
+             });
+           } else {
+             console.log("Oops something went wrong with facebook.");
+           }
+	});
+}
+
+
 
 function loadFirst(){
 	
@@ -277,78 +341,6 @@ function loadContent(table) {
  );
  }
  
-function grabMembers() {
-	actualContent = "people";
-	var users = getUsers();
-}
- 
-function getUsers() {
-	listOfUsers = [];
-	var query = new Parse.Query(Parse.User);
-	// query.equalTo("gender", "female");  // find all the women
-	query.find({
-	  success: function(users) {
-	    console.log(users);
-	    for (var i = 0; i < users.length; i++) {
-	    	if ('firstName' in users[i]._serverData) {
-	    		listOfUsers.push(users[i]._serverData);
-	    	}
-	    }
-	    console.log(listOfUsers);
-	    return listOfUsers;
-	  },
-	  error: function(users, error) {
-	  	console.log("error getting list of users");
-	  }
-	});
-}
-
-function getCurrentUserInfo(){
-	FB.api('/me', function(response) {
-           if (!response.error) {
-             console.log(response);
-             user = Parse.User.current();
-             // We save the data on the Parse user
-             user.set("firstName", response.first_name);
-             user.set("lastName", response.last_name);
-             user.set("facebookId", response.id);
-             var schoolName;
-             var education = response.education;
-             for (var i = 0; i < education.length; i++) {
-             	var institution = education[i];
-             	if (institution.type == "College") {
-             		schoolName = institution.school.name;
-             	}
-             }
-             if (schoolName != null) {
-             	user.set("college", schoolName);
-             	console.log("set college")
-             }
-             var employers = [];
-             var workplaces = response.work;
-             for (var i = 0; i< workplaces.length; i++) {
-             	employers.push(workplaces[i].employer.name);
-             }
-             user.set("employers", employers);
-             user.save(null, {
-               success: function(user) {
-                 console.log("successfully saved user information")
-                 console.log(user);
-               },
-               error: function(user, error) {
-                 console.log("Oops, something went wrong saving user info.");
-               }
-             });
-           } else {
-             console.log("Oops something went wrong with facebook.");
-           }
-	});
-}
-
-function grabPeople(){
-	
-}
-
 function grabAllPosts(){
 		var postsHTML ="";
   console.log('you asked for the internship .... '); 
