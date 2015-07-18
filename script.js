@@ -249,7 +249,7 @@ function getCurrentUserInfo(){
 
 
 function loadFirst(){
-	
+  loadUsers();
   actualContent = "posts";
   
   var postsHTML ="";
@@ -314,9 +314,6 @@ function loadContent(table) {
 	  $('.circle.' + table + 'Icon').attr('id', 'active');
 	  $('#' + actualContent).css({"display": "none"});
 	  actualContent = table;
-	  if (actualContent == 'people') {
-	  	loadUsers();
-	  }
 	  $('#' + table).css("display", "table");
 	  
 }
