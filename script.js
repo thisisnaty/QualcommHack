@@ -300,7 +300,7 @@ function grabMeetupPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("meet up") == -1 || (data.message).indexOf("meet") == -1) {
+			    if ((data.message).indexOf("meet up") != -1 || (data.message).indexOf("meet") != -1) {
 			    	var rowToShow = "#allPosts" + i;
 			    	$(rowToShow).show();
 				}
@@ -320,8 +320,8 @@ function grabEventPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("event") == -1 || (data.message).indexOf("next week") == -1
-			    || (data.message).indexOf("tomorrow") == -1 || (data.message).indexOf("tonight") == -1) {
+			    if ((data.message).indexOf("event") != -1 || (data.message).indexOf("next week") != -1
+			    || (data.message).indexOf("tomorrow") != -1 || (data.message).indexOf("tonight") != -1) {
 			    		var rowToShow = "#allPosts" + i;
 			    		$(rowToShow).show();
 				}
@@ -340,8 +340,8 @@ function grabEventPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("opportunity") == -1 || (data.message).indexOf("scholarship") == -1
-			    || (data.message).indexOf("award") == -1 || (data.message).indexOf("honor") == -1) {
+			    if ((data.message).indexOf("opportunity") != -1 || (data.message).indexOf("scholarship") != -1
+			    || (data.message).indexOf("award") != -1 || (data.message).indexOf("honor") != -1) {
 			    		var rowToShow = "#allPosts" + i;
 			    		$(rowToShow).show();
 				}
@@ -360,8 +360,8 @@ function grabEventPosts(){
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
 		    if ((typeof data.message) == "string") {
-			    if ((data.message).indexOf("free") == -1 || (data.message).indexOf("sale") == -1
-			    || (data.message).indexOf("promo") == -1 || (data.message).indexOf("win") == -1 ){
+			    if ((data.message).indexOf("free") != -1 || (data.message).indexOf("sale") != -1
+			    || (data.message).indexOf("promo") != -1 || (data.message).indexOf("win") != -1 ){
 			    		var rowToShow = "#allPosts" + i;
 			    		$(rowToShow).show();
 				}
