@@ -193,6 +193,8 @@ function loadFirst(table){
     "/AspirationsAward/feed?limit=50",
     function (response) {
       if (response && !response.error) {
+      		postArray = response.data; 
+      		console.log(postArray.length); 
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
 		    
