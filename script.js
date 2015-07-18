@@ -195,13 +195,13 @@ function getUsers() {
 	    		listOfUsers.push(users[i]._serverData);
 	    	}
 	    }
-	    console.log(listOfUsers);
-	    return listOfUsers;
 	  },
 	  error: function(users, error) {
 	  	console.log("error getting list of users");
 	  }
 	});
+	console.log(listOfUsers);
+	return listOfUsers;
 }
 
 function getCurrentUserInfo(){
