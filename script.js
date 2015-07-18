@@ -1,5 +1,6 @@
 var actualContent;
 var postArray; 
+var eventArray;
 $('#loading').show();
 ( function( $ ) {
 $( document ).ready(function() {
@@ -220,17 +221,18 @@ function loadFirst(){
 );
 var eventsHTML ="";
 FB.api(
-    "/AspirationsAward/events",
+    "aspirationsaward/events/attending/?fields=name",
     function (response) {
       if (response && !response.error) {
   
-        	 eventsArray = response.data;
+        	 eventArray = response.data;
       		console.log(eventsArray.length); 
 		for (var i = 0; i < eventsArray.length; i++) {
 		    var data = response.data[i];
 		    
 		    //eventsHTML += "<tr id='allEvents"+ i + "'><th id='backgroundIMG' colspan='4'> <img id='eventIMG' src='" + data.picture + "'/></th></tr>";
-		    eventsHTML += "<tr><td>" + data.name + "</td><td>" + data.description + "</td><td>" + "</td><td>" + data.start_time + "</td></tr>";
+		    eventsHTML += "<tr><td>" + data.name + "</td></tr>";
+		    //<td>" + data.description + "</td><td>" + "</td><td>" + data.start_time + "</td></tr>";
 		    
 		    //console.log(data.message);
 		}
