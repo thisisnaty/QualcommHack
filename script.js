@@ -191,19 +191,18 @@ function getUsers() {
 	query.find({
 	  success: function(users) {
 	    console.log("successfully queried")
+	    
+		for (var i = 0; i < users.length; i++) {
+		    	if ('firstName' in users[i]._serverData) {
+		    		listOfUsers.push(users[i]._serverData);
+		    		console.log(listOfUsers);
+		    	}
+		    }
 	  },
 	  error: function(users, error) {
 	  	console.log("error getting list of users");
 	  }
 	});
-	// for (var i = 0; i < users.length; i++) {
-	//     	if ('firstName' in users[i]._serverData) {
-	//     		listOfUsers.push(users[i]._serverData);
-	//     		console.log(listOfUsers);
-	//     	}
-	//     }
-	console.log("printing query");
-	console.log(query);
 	console.log("printing list of users...");
 	console.log(listOfUsers);
 }
