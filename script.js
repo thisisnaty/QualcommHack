@@ -285,9 +285,11 @@ function grabMyInfo(){
              // We save the data on the Parse user
              user.set("firstName", response.first_name);
              user.set("lastName", response.last_name);
+             console.log(user);
              user.save(null, {
                success: function(user) {
                  console.log("successfully saved user information")
+                 console.log(user);
                },
                error: function(user, error) {
                  console.log("Oops, something went wrong saving user info.");
