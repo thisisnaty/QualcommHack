@@ -2,12 +2,56 @@
 <html>
 <head>
 <title>Facebook Login JavaScript Example</title>
-<link rel="stylesheet" type="text/css" href="main.css"> 
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-<script src="script.js" type="text/javaScript"></script>
+<link rel="stylesheet" type="text/css" href="main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript" src="script.js"></script>
 <meta charset="UTF-8">
 </head>
 <body>
+	<table id="top">
+			<tr>
+				<td id="title">
+					NCWIT
+				</td>
+				<td id="nav">
+					<td class="circle postsIcon" id="active" onclick="loadContent('posts')">
+						Posts
+					</td>
+					<td class="circle peopleIcon" onclick="loadContent('people')">
+						People
+					</td>
+					<td class="circle eventsIcon" onclick="loadContent('events')">
+						Events
+					</td>
+					<td class="circle photosIcon" onclick="loadContent('photos')">
+						Photos
+					</td>
+					<td class="circle filesIcon" onclick="loadContent('files')">
+						Files
+					</td>
+				</td>
+			</tr>
+		</table>
+		<table id="bottom">
+			<tr>
+				<td>
+					<table class="content" id="posts">
+					</table>
+					<table class="content" id="people">
+					</table>
+					<table class="content" id="events">
+					</table>
+					<table class="content" id="photos">
+					</table>
+					<table class="content" id="files">
+					</table>
+				</td>
+			</tr>
+		</table>
+		<script>
+		loadFirst("posts");
+	</script>
   <div id='cssmenu'>
   	<form class='searchBar'>
          <input class='searchPosts' type="text" placeholder="Search for posts" required>
