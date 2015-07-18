@@ -20,6 +20,7 @@ table#top{
 #postIMG {
 	max-width:70px;
 	height:70px;
+	background-color:rgb(4, 70, 108);
 }
 #postMessage {
 	margin-left:45px;
