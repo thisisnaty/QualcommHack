@@ -123,8 +123,6 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
         callGroups();
     });
   }
