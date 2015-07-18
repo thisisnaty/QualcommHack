@@ -264,7 +264,30 @@ function grabPeople(){
 	
 }
 
-
+function grabInternshipPosts(){
+		var postsHTML ="";
+  console.log('you asked for the internship .... '); 
+  FB.api(
+    "/AspirationsAward/feed?limit=100",
+    function (response) {
+      if (response && !response.error) {
+		for (var i = 0; i < response.data.length; i++) {
+		    var data = response.data[i];
+		    if (data.message.search(/internship/i) != -1) {
+			    //postsHTML += "<tr><div class='fb-post' data-href='" + data.actions[0].link + "' data-width='500px'></div></tr>";
+			    postsHTML += "<tr><td id='postIMG'> <img src='" + data.picture + "'/></td><td id='postMessage'>";
+			    postsHTML += "<a class='profileLink' style='text-decoration:none' href='" + data.actions[0].link + "'>" + data.message + " </a></td></tr>"
+			    //console.log(data.message);
+			}
+		}
+		$('#posts').append(postsHTML);
+	}
+      else {
+        console.log(response); 
+      }
+    }
+);
+}
 
 /*function loadContent(table) {
   $('#active').removeAttr('id');
