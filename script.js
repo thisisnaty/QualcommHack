@@ -1,4 +1,5 @@
 var actualContent;
+var postArray; 
 ( function( $ ) {
 $( document ).ready(function() {
 $('#cssmenu ul ul li:odd').addClass('odd');
@@ -243,6 +244,7 @@ function grabPosts(){
     "/AspirationsAward/feed?limit=50",
     function (response) {
       if (response && !response.error) {
+      		postArray = response.data; 
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
 		    
@@ -267,12 +269,8 @@ function grabPeople(){
 function grabInternshipPosts(){
 		var postsHTML ="";
   console.log('you asked for the internship .... '); 
-  FB.api(
-    "/AspirationsAward/feed?limit=100",
-    function (response) {
-      if (response && !response.error) {
-		for (var i = 0; i < response.data.length; i++) {
-		    var data = response.data[i];
+		for (var i = 0; i < postArray.length; i++) {
+		    var data = postArray[i];
 		    console.log(data.message); 
 		    if (data.message.search(/internship/i) != -1) {
 			    //postsHTML += "<tr><div class='fb-post' data-href='" + data.actions[0].link + "' data-width='500px'></div></tr>";
@@ -283,10 +281,6 @@ function grabInternshipPosts(){
 		}
 		$('#posts').append(postsHTML);
 	}
-      else {
-        console.log(response); 
-      }
-    }
 );
 }
 
