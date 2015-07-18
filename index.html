@@ -110,8 +110,7 @@ function callGroups() {
       "/AspirationsAward",
       function (response) {
         if (response && !response.error) {
-          console.log(response.data); 
-          return response.data;
+          console.log(response.data["id"]); 
         }
         else {
           console.log(response); 
