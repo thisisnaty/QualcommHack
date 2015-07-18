@@ -10,6 +10,11 @@ table#top{
 	-webkit-border-horizontal-spacing: 20px;
 	-webkit-border-vertical-spacing: 2px;
 	width: 100%;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  z-index: 9999;
+	  background-color: rgb(4, 70, 108);
 }
 #displayPosts {
 	font-size:14px;
