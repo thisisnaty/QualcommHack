@@ -58,7 +58,7 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
   }
 
   window.fbAsyncInit = function() {
-  FB.init({
+  Parse.FacebookUtils.init({
     appId      : '320286661453691',
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
@@ -66,6 +66,29 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
     version    : 'v2.2' // use version 2.2
   });
 
+Parse.FacebookUtils.logIn(null, {
+  success: function(user) {
+    if (!user.existed()) {
+      alert("User signed up and logged in through Facebook!");
+    } else {
+      alert("User logged in through Facebook!");
+    }
+  },
+  error: function(user, error) {
+    alert("User cancelled the Facebook login or did not fully authorize.");
+  }
+});
+
+if (!Parse.FacebookUtils.isLinked(user)) {
+  Parse.FacebookUtils.link(user, null, {
+    success: function(user) {
+      alert("Woohoo, user logged in with Facebook!");
+    },
+    error: function(user, error) {
+      alert("User cancelled the Facebook login or did not fully authorize.");
+    }
+  });
+}
 
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
