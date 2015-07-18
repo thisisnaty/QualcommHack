@@ -22,6 +22,9 @@ $('#cssmenu > ul > li > a').click(function() {
 });
 });
 } )( jQuery );
+
+Parse.initialize("Tr0epOMYD8xXYa22R3Uc8MhEGMYGLuoA0J05aYv3", "o3ki0HSrtxHj0Dcq4LmJAKrwTLo3BBgpX9awr1p8");
+
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
