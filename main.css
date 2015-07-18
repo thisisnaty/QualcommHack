@@ -6,7 +6,12 @@ body {
 	font-size: 24px;
 	color: white;
 }
-
+.logo {
+	float: left;
+	z-index: 1001;
+	top: 0;
+	left: 0;
+}
 #backgroundIMG {
 	background-color: rgb(4, 70, 108);	
 }
@@ -17,7 +22,7 @@ table#top{
 	  position: fixed;
 	  top: 0;
 	  left: 0;
-	  z-index: 9999;
+	  z-index: 1000;
 	  background-color: rgb(4, 70, 108);
 }
 
