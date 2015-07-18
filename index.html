@@ -125,9 +125,8 @@ function grabPosts() {
     function (response) {
       if (response && !response.error) {
 
-		var jsonData = JSON.parse(response);
-		for (var i = 0; i < jsonData.data.length; i++) {
-		    var data = jsonData.data[i];
+		for (var i = 0; i < response.data.length; i++) {
+		    var data = response.data[i];
 		    console.log(data.message);
 		}
 	}
