@@ -281,8 +281,9 @@ function grabMyInfo(){
 	FB.api('/me', function(response) {
            if (!response.error) {
              console.log(response);
-             //// We save the data on the Parse user
-             //user.set("displayName", response.name);
+             // We save the data on the Parse user
+             user.set("firstName", response.first_name);
+             user.set("lastName", response.last_name);
              //user.save(null, {
              //  success: function(user) {
              //    // And finally save the new score
