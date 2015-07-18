@@ -63,7 +63,7 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
-  function onLoginButtonClick() {
+  function onLoginButtonClicked() {
       Parse.FacebookUtils.logIn("public_profile,email,user_groups,user_education_history,user_work_history,user_friends,friends_groups", {
 	  success: function(user) {
 	    if (!user.existed()) {
