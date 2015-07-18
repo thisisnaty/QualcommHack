@@ -20,9 +20,12 @@ table#top{
 #postIMG {
 	max-width:70px;
 	height:70px;
+	-webkit-border-radius: 35px;
+    	-moz-border-radius: 35px;
+    	border-radius:35px;
 }
 
-.content{
+.content > td{
 	background-color:rgb(4, 70, 108);
 }
 #postMessage {
@@ -93,9 +96,6 @@ a.profileLink
 #posts > img {
 	width:70px;
 	height:70px;
-	-webkit-border-radius: 35px;
-    	-moz-border-radius: 35px;
-    	border-radius:35px;
 }
 #events {
 	display: none;
