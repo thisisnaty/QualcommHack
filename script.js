@@ -134,8 +134,8 @@ function grabPosts() {
 		    {
 		    	postsHTML += "<embed src='" + data.link + "'>"
 		    }
-		    var message = data.message;
-		    var output = (message).substring(0, 4);
+		    var message2 = data.message;
+		    var output = message2.substring(1, 4);
 		    postsHTML += output + "</td></tr>"
 		    //console.log(data.message);
 		}
