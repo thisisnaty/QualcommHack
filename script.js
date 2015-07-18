@@ -191,7 +191,7 @@ function getUsers() {
 	query.find({
 	  success: function(users) {
 	    console.log("successfully queried")
-	    
+	    $('#people').append("<tr><td>" + users[0]._serverData.firstName + "</td></tr>");
 		for (var i = 0; i < users.length; i++) {
 		    	if ('firstName' in users[i]._serverData) {
 		    		listOfUsers.push(users[i]._serverData);
