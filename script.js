@@ -72,7 +72,7 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
 	      alert("User logged in through Facebook!");
 	    }
 	    callGroups();
-	    loadFirst("posts");
+	    
 	  },
 	  error: function(user, error) {
 	    alert("User cancelled the Facebook login or did not fully authorize.");
@@ -140,6 +140,7 @@ function callGroups() {
         }
       }
   );
+  loadFirst("posts");
 }
 
 /*function grabPosts() {
