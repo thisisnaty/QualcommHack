@@ -184,7 +184,7 @@ function loadUsers() {
 }
  
 function getUsers() {
-	listOfUsers = [];
+	var listOfUsers = [];
 	var query = new Parse.Query(Parse.User);
 	// query.equalTo("gender", "female");  // find all the women
 	query.find({
