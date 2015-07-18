@@ -1,4 +1,4 @@
-var loggedIn;
+var actualContent;
 ( function( $ ) {
 $( document ).ready(function() {
 $('#cssmenu ul ul li:odd').addClass('odd');
@@ -71,6 +71,8 @@ Parse.initialize("dZeSJi216NmOGHhuCwjwie3sQt4aEXoR3jchZuAu", "58NzXAiqgqklsydhe2
 	    } else {
 	      alert("User logged in through Facebook!");
 	    }
+	    callGroups();
+	    loadFirst("posts");
 	  },
 	  error: function(user, error) {
 	    alert("User cancelled the Facebook login or did not fully authorize.");
@@ -140,7 +142,7 @@ function callGroups() {
   );
 }
 
-function grabPosts() {
+/*function grabPosts() {
 	var postsHTML ="";
   console.log('you asked for the feed .... '); 
   FB.api(
@@ -150,9 +152,9 @@ function grabPosts() {
 		for (var i = 0; i < response.data.length; i++) {
 		    var data = response.data[i];
 		    
-		    //postsHTML += "<tr><div class='fb-post' data-href='" + data.actions[0].link + "' data-width='500px'></div></tr>";
-		    postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
-		    postsHTML += "<a href='" + data.actions[0].link + "'>" + data.message + "</a></td></tr>"
+		    postsHTML += "<tr><div class='fb-post' data-href='" + data.actions[0].link + "' data-width='500px'></div></tr>";
+		    //postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
+		    //postsHTML += data.message + "</td></tr>"
 		    //console.log(data.message);
 		}
 		$('#posts').append(postsHTML);
@@ -162,7 +164,7 @@ function grabPosts() {
       }
     }
 );
-}
+}*/
 
 function getMembers() {
   console.log('retrieving members ... '); 
@@ -180,26 +182,39 @@ FB.api(
 );
 }
 
-/*function loadFirst(table){
+function loadFirst(table){
   actualContent = table;
-  var appendContent = "";
-  for (var i = 0; i < 10; i++) {
-    appendContent += "<tr>" +
-                        "<td>" +
-                          table +
-                        "</td>" +
-                        "<td>" +
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum" + 
-                        "</td>" +
-                      "</tr>";
-  }
-  $('#' + table).append(appendContent);
-  $('#' + table).css("display", "table");
+  
+  var postsHTML ="";
+  console.log('you asked for the feed .... '); 
+  FB.api(
+    "/AspirationsAward/feed?limit=50",
+    function (response) {
+      if (response && !response.error) {
+		for (var i = 0; i < response.data.length; i++) {
+		    var data = response.data[i];
+		    
+		    postsHTML += "<tr>" +
+		    			"<div class='fb-post' data-href='" + data.actions[0].link + "' data-width='500px'>" +
+		    			"</div>" +
+		    		"</tr>";
+		    //postsHTML += "<tr><td> <img src='" + data.picture + "'/></td><td>";
+		    //postsHTML += data.message + "</td></tr>"
+		    //console.log(data.message);
+		}
+		$('#' + table).append(postsHTML);
+		$('#' + table).css("display", "table");
+	}
+      else {
+        console.log(response); 
+      }
+    }
+);
 }
 
 
 
-function loadContent(table) {
+/*function loadContent(table) {
   $('#active').removeAttr('id');
   $('.circle.' + table + 'Icon').attr('id', 'active');
   $('#' + actualContent).css({"display": "none"});
