@@ -248,7 +248,7 @@ function grabInternshipPosts(){
   console.log('you asked for the internship .... '); 
 		for (var i = 0; i < postArray.length; i++) {
 		    var data = postArray[i];
-		    if ((typeof data) != "Object") {
+		    if ((typeof data.message) != "string") {
 			    if ((data.message).indexOf("internships") > -1) {
 			    	//console.log(data.message); 
 				    //postsHTML += "<tr><div class='fb-post' data-href='" + data.actions[0].link + "' data-width='500px'></div></tr>";
