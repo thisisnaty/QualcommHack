@@ -32,7 +32,7 @@ body {
     border-right: 1px solid #29447e;
     border-bottom: 1px solid #1a356e;
     border-left: none;
-
+	margin-left:25px;
     height: 25px; 
     width: 120px;
     padding-right: 7px;
