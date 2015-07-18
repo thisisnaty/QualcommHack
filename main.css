@@ -68,6 +68,18 @@ table#top{
 }
 #posts {
 	display: none;
+	font-size:14px;
+	color:black;
+	background-color:white;
+	margin-left:350px;
+}
+
+#posts > img {
+	width:70px;
+	height:70px;
+	-webkit-border-radius: 35px;
+    	-moz-border-radius: 35px;
+    	border-radius:35px;
 }
 #events {
 	display: none;
