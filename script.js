@@ -159,7 +159,7 @@ FB.api(
 );
 }
 
-function loadFirst(table){
+/*function loadFirst(table){
   actualContent = table;
   var appendContent = "";
   for (var i = 0; i < 10; i++) {
@@ -196,4 +196,4 @@ function loadContent(table) {
   }
   $('#' + table).append(appendContent);
   $('#' + table).css("display", "table");
-}
+}*/
