@@ -108,7 +108,7 @@ a.profileLink
 .circle {
     width: 60px;
     height: 60px;
-    padding: 7px;
+    margin: 7px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px; 
